@@ -1,0 +1,276 @@
+.accountContainer{
+    padding: 40px;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+}
+.boardMainContainer{
+    border-radius: 20px;
+    width: 280px;
+    background-color: #000000;
+}
+.boardContainer{
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.boardContainerHeading{
+    font-family: 'Montserrat';
+    font-size: 36px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+.boardSubContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    min-height: 380px;
+}
+.boardSubSectionContainer{
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.boardSectionPara{
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'Montserrat';
+    margin-left: 15px;
+}
+.boardBottomSectionPara{
+    font-size: 14px;
+    font-weight: 400;
+    font-family: "Montserrat";
+    color: #ffffff;
+}
+.accountHeadingContainer{
+    width: 80%;
+    overflow-y: scroll;
+    min-height: 93vh;
+}
+.headerContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    padding-bottom: 40px;
+    margin: auto;
+}
+.headerContainerHeading{
+    font-size: 24px;
+    font-weight: 700;
+    font-family: "Montserrat";
+}
+.subHeaderContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.signOutBtn{
+    outline: none;
+    cursor: pointer;
+    border-width: 0;
+    border-radius: 8px;
+    width: 120px;
+    height: 35px;
+    margin-right: 10px;
+    background-color: #24a0ed;
+}
+.inputContainer{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+.inputField{
+    height: 30px;
+    font-family: "Lato";
+    font-size: 14px;
+    padding: 2px;
+    width: 100%;
+}
+.inputField:focus{
+    outline: none;
+}
+.totalCountContainer{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    padding-bottom: 25px;
+}
+.totalCountCard{
+    width: 20%;
+    padding: 10px;
+    border-radius: 12px;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+}
+.totalCountCardPara{
+    font-family: "Lato";
+    font-size: 14px;
+    font-weight: 400;
+    color: #000000;
+}
+.totalCountCardHeading{
+    font-weight: "Open Sans";
+    font-size: 24px;
+    font-weight: 700;
+}
+.graphContainer{
+    width: 90%;
+    background-color: #ffffff;
+    border-radius: 15px;
+    margin: auto;
+    padding-top: 15px;
+    margin-bottom: 40px;
+}
+.graphSubContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+    padding-bottom: 10px;
+}
+.graphDetailsHeading{
+    color: #000;
+    font-size: 18px;
+    font-family: "Montserrat";
+    font-weight: 700;
+}
+.graphDetailsPara{
+    color:  #858585;
+    font-size: 14px;
+    font-family: "Montserrat";
+    display: flex;
+    align-items: center;
+}
+.graphDetailsSubContainer{
+    display: flex;
+    flex-direction: row;
+    width: 20%;
+    justify-content: space-between;
+}
+.graphLegendContainer{
+    display: flex;
+    align-items: center;
+}
+.graphLegendPara{
+    color: #000000;
+    font-size: 14px;
+    font-family: "Lato";
+    margin-left: 4px;
+}
+.pieContainer{
+    width: 90%;
+    margin: auto;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.pieChartContainer{
+    background-color: #ffffff;
+    border-radius: 12px;
+    width: 45%;
+    padding: 20px;
+}
+.pieChartDetailsContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: auto;
+}
+.pieChartTopProductsHeading{
+    color: #000000;
+    font-size: 18px;
+    font-family: "Montserrat";
+    font-weight: 700;
+}
+.pieChartDetailsPara{
+    color: #858585;
+    font-size: 12px;
+    font-family: "Montserrat";
+    display: flex;
+    flex-direction: row;
+}
+.pieChartSubContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+.pieChartLegendContainer{
+    display: flex;
+    flex-direction: row;
+}
+.pieChartLegendHeading{
+    color: #000000;
+    font-size: 14px;
+    font-family: "Montserrat";
+    font-weight: 700;
+}
+.pieChartLegendPara{
+    color: #858585;
+    font-size: 12px;
+    font-family: "Lato";
+}
+.scheduleContainer{
+    background-color: #ffffff;
+    border-radius: 12px;
+    width: 45%;
+    padding: 20px;
+}
+.scheduleDetailsContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: auto;
+}
+.scheduleTopProductsHeading{
+    color: #000000;
+    font-size: 18px;
+    font-family: "Montserrat";
+    font-weight: 700;
+}
+.scheduleDetailsPara{
+    color: #858585;
+    font-size: 12px;
+    font-family: "Montserrat";
+    display: flex;
+    align-items: center;
+}
+.scheduleDetailsSubContainer{
+    border-left: 5px solid #9BDD7C;
+    padding-left: 7px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.scheduleDetailsHeading{
+    color: #666;
+    font-size: 14px;
+    font-family: "Lato";
+    font-weight: 700;
+}
+.scheduleDetailsParagraph{
+    color:  #999;
+    font-size: 12px;
+    font-family: Lato;
+}
+.scheduleDetailsSubContainer1{
+    border-left: 5px solid #6972C3;
+    padding-left: 7px;
+    margin-bottom: 10px;
+}
