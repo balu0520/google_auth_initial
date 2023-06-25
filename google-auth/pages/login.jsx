@@ -55,7 +55,7 @@ export default function Login(){
                         </button>
                         <button className={styles.loginContainer}>
                             <FaApple width={14} height={14}/>
-                            <p className={styles.loginContainerPara}>Sign in with google</p>
+                            <p className={styles.loginContainerPara}>Sign in with mac</p>
                         </button>
                     </div>
                     <form className={styles.loginFormContainer} onSubmit={handleLogin}>

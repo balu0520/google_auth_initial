@@ -1,6 +1,4 @@
-import { signOut as googleSignOut, useSession, getSession} from 'next-auth/react';
-// import { signOut as credentialsSignOut } from 'next-auth/client';
-import { useRouter } from "next/router";
+import { signOut, useSession} from 'next-auth/react';
 import styles from './accountpage.module.css'
 import {AiOutlinePieChart,AiOutlineCalendar,AiOutlineSetting,AiOutlineLike,AiOutlineSearch, AiOutlineRight} from 'react-icons/ai'
 import {BsFillTagsFill,BsCash,BsChevronDown} from 'react-icons/bs'
@@ -31,14 +29,10 @@ const data = [
 
 const User = () => {
     const {data:session} = useSession()
-    const router = useRouter()
-
     const onClickSignOut = async () => {
-        await googleSignOut({redirect:false})
-        router.replace('/')
+        await signOut({redirect:false})
     }
     if (session){
-        console.log(session.user)
         return(
             <div style={{backgroundColor:'#F5F5F5'}}>
                 <div className={styles.accountContainer}>

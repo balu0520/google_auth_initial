@@ -133,6 +133,7 @@
     height: 35px;
     margin-right: 10px;
     background-color: #24a0ed;
+    color: #ffffff;
 }
 .inputContainer{
     width: 150px;
@@ -433,6 +434,7 @@
 @media screen and (max-width: 991px) {
     .graphContainer{
         margin: auto;
+        margin-bottom: 20px;
     }
     .pieContainer{
         width: 90%;
