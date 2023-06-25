@@ -51,6 +51,15 @@
     font-family: "Lato";
     font-weight: 400;
 }
+@media screen and (max-width:576px) {
+    .signInHeading{
+        font-size: 22px;
+    }
+    .signInPara{
+        font-size: 12px;
+    }
+    
+}
 .loginContainers{
     display: flex;
     align-items: center;
@@ -85,6 +94,19 @@
     padding-bottom: 20px;
     margin-top: 20px;
 }
+@media screen and (max-width:400px){
+    .loginContainer{
+        width: 120px;
+        margin-right: 5px;
+        justify-content: space-between;
+    }
+    .loginContainerPara{
+        font-size: 10px;
+    }
+    .loginFormContainer{
+        width: 100%;
+    }
+}
 .inputFormContainer{
     display: flex;
     flex-direction: column;
@@ -106,6 +128,12 @@
     color: #000000;
     padding-left: 10px;
     margin-bottom: 20px;
+}
+.errorMsg{
+    color: red;
+    font-family: "Roboto";
+    font-size: 12px;
+    padding-top: 0;
 }
 .forgotPassword{
     font-family: "Lato";

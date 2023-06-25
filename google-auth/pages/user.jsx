@@ -1,4 +1,5 @@
-import { signOut,useSession } from "next-auth/react";
+import { signOut as googleSignOut, useSession, getSession} from 'next-auth/react';
+// import { signOut as credentialsSignOut } from 'next-auth/client';
 import { useRouter } from "next/router";
 import styles from './accountpage.module.css'
 import {AiOutlinePieChart,AiOutlineCalendar,AiOutlineSetting,AiOutlineLike,AiOutlineSearch, AiOutlineRight} from 'react-icons/ai'
@@ -12,7 +13,7 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, ResponsiveContainer, PieC
 const data = [
     { month: 'Week 0', curve1: 400, curve2: 240 },
     { month: 'Week 1', curve1: 300, curve2: 456 },
-    { month: 'week 2', curve1: 500, curve2: 560 },
+    { month: 'Week 2', curve1: 500, curve2: 560 },
     { month: 'Week 3', curve1: 200, curve2: 370 },
     { month: 'Week 4', curve1: 700, curve2: 420 },
     { month: 'Week 5', curve1: 650, curve2: 500 }
@@ -28,15 +29,16 @@ const data = [
   
   
 
-const user = () => {
+const User = () => {
     const {data:session} = useSession()
     const router = useRouter()
 
-    const OnClickSignOut = async () => {
-        await signOut({redirect:false})
+    const onClickSignOut = async () => {
+        await googleSignOut({redirect:false})
         router.replace('/')
     }
     if (session){
+        console.log(session.user)
         return(
             <div style={{backgroundColor:'#F5F5F5'}}>
                 <div className={styles.accountContainer}>
@@ -83,8 +85,15 @@ const user = () => {
                                     <AiOutlineSearch width={24} height={24} color="#858585" style={{paddingRight:'5px'}}/>
                                 </div>
                             </div>
-                            <img src={session.user.image} alt="user-image" style={{width:'30px',height:'30px',borderRadius:'50%',marginRight:'10px',marginLeft:'10px'}} />
-                                <button onClick={OnClickSignOut} className={styles.signOutBtn}>Sign out</button>
+                            {session.user.name !== undefined && (
+                                <img src={session.user.image} alt="user-image" style={{width:'30px',height:'30px',borderRadius:'50%',marginRight:'10px',marginLeft:'10px'}} />
+                            )}
+                            {session.user.name !== undefined && (
+                                <button onClick={onClickSignOut} className={styles.signOutBtn}>Sign Out</button>
+                            )}
+                            {session.user.name === undefined && (
+                                <button onClick={onClickSignOut} className={styles.signOutBtn}>Sign Out</button>
+                            )}
                         </div>
                     </div>
                     <div className={styles.totalCountContainer}>
@@ -217,4 +226,4 @@ const user = () => {
     }
 }
 
-export default user
+export default User

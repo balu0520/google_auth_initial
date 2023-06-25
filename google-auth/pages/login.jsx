@@ -8,8 +8,9 @@ import { useRouter } from 'next/router'
 
 
 export default function Login(){
-    const [name,setName] = useState('')
+    const [username,setName] = useState('')
     const [password,setPassword] = useState('')
+    const [err,setErr] = useState(false)
     const router = useRouter()
 
     const onClickSignIn = async () => {
@@ -21,6 +22,22 @@ export default function Login(){
           }
         
     }
+
+    const handleLogin = async event => {
+        event.preventDefault()
+        const result = await signIn('credentials', {
+            redirect: false,
+            username,
+            password,
+          });
+      
+          if (result.error) {
+            setErr(true)
+            console.error(result.error);
+          } else {
+            setErr(false)
+          }
+        };
 
     return (
         <div className={styles.container}>
@@ -41,20 +58,22 @@ export default function Login(){
                             <p className={styles.loginContainerPara}>Sign in with google</p>
                         </button>
                     </div>
-                    <div className={styles.loginFormContainer}>
+                    <form className={styles.loginFormContainer} onSubmit={handleLogin}>
                         <div style={{margin:'auto', width:'85%'}}>
                             <div className={styles.inputFormContainer}>
-                                <label className={styles.loginFormName} htmlFor='name'>Email address</label>
-                                <input type="text" value={name} onChange={(e) => setName(e.target.value)} id='name' className={styles.loginFormInput}/>
+                                <label className={styles.loginFormName} htmlFor='username'>Email address</label>
+                                <input type="text" value={username} onChange={(e) => setName(e.target.value)} id='username' className={styles.loginFormInput}/>
                             </div>
                             <div className={styles.inputFormContainer}>
                                 <label className={styles.loginFormName} htmlFor='password'>Password</label>
                                 <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} id="password" className={styles.loginFormInput}/>
+                                {err && (<p className={styles.errorMsg}>invalid credentials</p>)}
                             </div>
+                            
                             <p className={styles.forgotPassword}>Forgot password?</p>
-                            <button type="button" className={styles.signInBtn}>Sign In</button>
+                            <button type="submit" className={styles.signInBtn}>Sign In</button>
                         </div>
-                    </div> 
+                    </form> 
                     <p className={styles.accountDesription}>Don't have an account? <span style={{color:'#346BD4'}}>Register here</span></p>
                 </div>
             </div>
